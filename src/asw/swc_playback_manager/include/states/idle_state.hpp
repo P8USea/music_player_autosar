@@ -1,10 +1,10 @@
-// Thu vien cho trang thai "Pause" (Tam dung)
-#ifndef PAUSE_STATE_HPP
-#define PAUSE_STATE_HPP
+// Thu vien dinh nghia trang thai cho trang thai "Idle" (Dung)
+#ifndef IDLE_STATE_HPP
+#define IDLE_STATE_HPP
 #include "playback_state.hpp"
 namespace AutosarMusicPlayer {
 namespace Asw {
-class PauseState : public PlaybackState
+class IdleState : public PlaybackState
 {
    public:
     Common::ErrorCode handlePlay(PlaybackManager& context) override;
@@ -14,4 +14,4 @@ class PauseState : public PlaybackState
 };
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer
-#endif  // !PAUSE_STATE_HPP
+#endif  // !IDLE
