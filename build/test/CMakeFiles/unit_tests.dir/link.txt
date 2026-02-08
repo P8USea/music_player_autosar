@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/unit_tests.dir/unit_tests/asw/test_playlist_model.cpp.o CMakeFiles/unit_tests.dir/__/src/asw/swc_playlist_model/src/playlist.cpp.o -o ../bin/unit_tests  ../lib/libgtest_main.a ../lib/libgtest.a 

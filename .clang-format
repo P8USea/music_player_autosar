@@ -1,0 +1,40 @@
+---
+Language: Cpp
+BasedOnStyle: Google
+
+# Độ rộng cột (Chuẩn Automotive thường là 80 hoặc 100)
+ColumnLimit: 100
+
+# Thụt đầu dòng 4 khoảng trắng (Standard cho nhúng)
+IndentWidth: 4
+
+# Cấu hình dấu ngoặc nhọn
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterClass: true
+  AfterControlStatement: Never
+  AfterEnum: true
+  AfterFunction: true
+  AfterNamespace: false
+  AfterStruct: true
+  BeforeElse: false
+  BeforeCatch: false
+
+# Sắp xếp các include theo thứ tự bảng chữ cái (Giúp tránh duplicate)
+SortIncludes: true
+
+# Không cho phép hàm ngắn trên một dòng (Dễ đặt breakpoint khi debug)
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+
+# Con trỏ nằm sát về phía tên kiểu dữ liệu: int* p; thay vì int *p;
+# (Phong cách C++ hiện đại)
+PointerAlignment: Left
+
+# Giữ khoảng trống sau template keyword
+SpaceAfterTemplateKeyword: true
+
+# Giới hạn số dòng trống liên tiếp
+MaxEmptyLinesToKeep: 1
+---

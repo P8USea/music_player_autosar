@@ -1,0 +1,3 @@
+/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate.dir
+/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/CMakeFiles/edit_cache.dir
+/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/CMakeFiles/rebuild_cache.dir

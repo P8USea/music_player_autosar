@@ -1,0 +1,7 @@
+# CMake generated Testfile for 
+# Source directory: /home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-src/googlemock
+# Build directory: /home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-build/googlemock
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("../googletest")
