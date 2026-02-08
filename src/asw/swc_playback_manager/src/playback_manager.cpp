@@ -2,7 +2,7 @@
 #include <utility>
 
 
-#include "../include/playback_state_machine.hpp"
+#include "playback_state_machine.hpp"
 #include "states/idle_state.hpp"
 
 namespace AutosarMusicPlayer {
