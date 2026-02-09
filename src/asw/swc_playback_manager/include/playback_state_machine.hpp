@@ -2,8 +2,8 @@
 // Trang thai: Dang phat, Tam dung, Dung
 #ifndef PLAYBACK_STATE_MACHINE_HPP
 #define PLAYBACK_STATE_MACHINE_HPP
-#include <memory>
 
+#include <memory>
 #include "i_playback_control.hpp"
 #include "playback_state.hpp"
 namespace AutosarMusicPlayer {
@@ -27,4 +27,4 @@ class PlaybackManager : public IPlaybackControl
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer
 
-#endif  // !DEBUG
+#endif  // !PLAYBACK_STATE_MACHINE_HPP

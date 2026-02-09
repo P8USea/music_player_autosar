@@ -14,4 +14,4 @@ class IdleState : public PlaybackState
 };
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer
-#endif  // !IDLE
+#endif  // IDLE_STATE_HPP

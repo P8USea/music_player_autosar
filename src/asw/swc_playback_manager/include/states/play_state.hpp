@@ -7,11 +7,14 @@ namespace Asw {
 class PlayState : public PlaybackState
 {
    public:
-    Common::ErrorCode handlePlay(PlaybackManager& context) override;
+    Common::ErrorCode handlePlay(PlaybackManager& /*context*/) override;
+
     Common::ErrorCode handlePause(PlaybackManager& context) override;
+
     Common::ErrorCode handleStop(PlaybackManager& context) override;
+
     std::string getStateName() const override;
 };
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer
-#endif  // !PLAY_STATE_HPP
+#endif  // PLAY_STATE_HPP

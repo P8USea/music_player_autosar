@@ -18,6 +18,7 @@ enum class ErrorCode : uint8_t
     HARDWARE_FAILURE,   // Lỗi chip Audio hoặc Bus CAN
     OUT_OF_MEMORY,      // Lỗi cấp phát bộ nhớ (Heap full)
     INVALID_PARAMETER,  // Tham số truyền vào không hợp lệ
+    INVALID_OPERATION,  // Thao tác không hợp lệ với trạng thái hiện tại
     BUSY,               // Hệ thống đang bận xử lý tác vụ khác
     UNKNOWN_ERROR       // Lỗi không xác định
 };
