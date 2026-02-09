@@ -3,10 +3,10 @@
 # No other meaning or use of this file is supported.
 
 method=url
-command=/usr/bin/cmake;-P;/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;/usr/bin/cmake;-P;/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
-source_dir=/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps/googletest-src
-work_dir=/home/p8usea/Cpp_Course/MockProject/music_player_autosar/build/_deps
+command=/usr/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/cygdrive/c/Users/Admin/OneDrive/Tài liệu/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/download-googletest-populate.cmake;COMMAND;/usr/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/cygdrive/c/Users/Admin/OneDrive/Tài liệu/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/verify-googletest-populate.cmake;COMMAND;/usr/bin/cmake.exe;-DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE;-P;/cygdrive/c/Users/Admin/OneDrive/Tài liệu/MockProject/music_player_autosar/build/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/extract-googletest-populate.cmake
+source_dir=/cygdrive/c/Users/Admin/OneDrive/Tài liệu/MockProject/music_player_autosar/build/_deps/googletest-src
+work_dir=/cygdrive/c/Users/Admin/OneDrive/Tài liệu/MockProject/music_player_autosar/build/_deps
 url(s)=https://github.com/google/googletest/archive/refs/heads/main.zip
 hash=
-no_extract=
+      no_extract=
 
