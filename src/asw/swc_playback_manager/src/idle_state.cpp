@@ -9,18 +9,18 @@
 namespace AutosarMusicPlayer {
 namespace Asw {
 Common::ErrorCode IdleState::handlePlay(PlaybackManager& context) {
-    std::cout << "Transitioning from Idle to Play state." << std::endl;
+    std::cout << "Transitioning from Idle to Play state.\n";
     context.transitionTo(std::make_unique<PlayState>());
     return Common::ErrorCode::SUCCESS;
 }
 
 Common::ErrorCode IdleState::handlePause(PlaybackManager& /*context*/) {
-    std::cout << "IdleState: Pause command ignored." << std::endl;
+    std::cout << "IdleState: Pause command ignored.\n";
     return Common::ErrorCode::INVALID_OPERATION;
 }
 
 Common::ErrorCode IdleState::handleStop(PlaybackManager& /*context*/) {
-    std::cout << "IdleState: Stop command ignored." << std::endl;
+    std::cout << "IdleState: Stop command ignored.\n";
     return Common::ErrorCode::INVALID_OPERATION;
 }
 

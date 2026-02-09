@@ -20,7 +20,7 @@ Common::ErrorCode PauseState::handlePause(PlaybackManager& /*context*/) {
 }
 
 Common::ErrorCode PauseState::handleStop(PlaybackManager& context) {
-    std::cout << "Transitioning from Pause to Idle state." << std::endl;
+    std::cout << "Transitioning from Pause to Idle state.\n";
     context.transitionTo(std::make_unique<IdleState>());
     return Common::ErrorCode::SUCCESS;
 }
