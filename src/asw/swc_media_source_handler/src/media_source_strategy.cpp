@@ -2,16 +2,15 @@
 
 namespace AutosarMusicPlayer {
 namespace Asw {
-Common::ErrorCode MediaSourceStrategy::loadMediaSource(const std::string& source)
+Common::ErrorCode MediaSourceStrategy::loadMediaSource(const Common::MediaSourceType& source)
 {
-	(void)source;
-	return Common::ErrorCode::INVALID_OPERATION;
+    (void)source;
+    return Common::ErrorCode::INVALID_OPERATION;
 }
-
 
 std::vector<std::unique_ptr<Song>> MediaSourceStrategy::getSongs() const
 {
-	return {};
+    return {};
 }
 
 }  // namespace Asw
