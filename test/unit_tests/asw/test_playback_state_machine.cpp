@@ -1,17 +1,14 @@
 #include "gtest/gtest.h"
 #include <memory>
-#include <iostream>
 
-// Include các header file từ mã nguồn của bạn
 #include "playback_state_machine.hpp"
-#include "app_error_codes.hpp" // Đảm bảo file này tồn tại trong src/common hoặc tương tự
+#include "app_error_codes.hpp"
 
-// Sử dụng namespace để code gọn hơn
 using namespace AutosarMusicPlayer::Asw;
 using namespace AutosarMusicPlayer::Common;
 
 class PlaybackManagerTest : public ::testing::Test {
-protected:
+public:
     std::unique_ptr<PlaybackManager> playbackManager;
 
     // SetUp chạy trước mỗi TEST_F
@@ -26,11 +23,9 @@ protected:
     }
 };
 
-// ==========================================
-// TEST GROUP 1: TRẠNG THÁI KHỞI TẠO (IDLE)
-// ==========================================
+// TEST 1: TRẠNG THÁI KHỞI TẠO (IDLE)
 
-TEST_F(PlaybackManagerTest, InitialState_ShouldBeIdle) {
+TEST_F(PlaybackManagerTest, InitialIDLEState) {
     // Logic: Tại Idle, lệnh Pause và Stop là không hợp lệ (theo code idle_state.cpp)
     EXPECT_EQ(playbackManager->pause(), ErrorCode::INVALID_OPERATION);
     EXPECT_EQ(playbackManager->stop(), ErrorCode::INVALID_OPERATION);
@@ -39,16 +34,14 @@ TEST_F(PlaybackManagerTest, InitialState_ShouldBeIdle) {
     EXPECT_EQ(playbackManager->play(), ErrorCode::SUCCESS);
 }
 
-// ==========================================
-// TEST GROUP 2: CHUYỂN ĐỔI TRẠNG THÁI (TRANSITIONS)
-// ==========================================
+// TEST 2: CHUYỂN ĐỔI TRẠNG THÁI (TRANSITIONS)
 
 // Test: Idle -> Play
-TEST_F(PlaybackManagerTest, Transition_IdleToPlay) {
+TEST_F(PlaybackManagerTest, TransitionIdleToPlay) {
     // Hành động: Gọi Play
     ErrorCode result = playbackManager->play();
 
-    // Kiểm tra: Phải thành công
+    // Kiểm tra:
     EXPECT_EQ(result, ErrorCode::SUCCESS);
 
     // Kiểm tra trạng thái mới (PlayState):
@@ -59,14 +52,14 @@ TEST_F(PlaybackManagerTest, Transition_IdleToPlay) {
 }
 
 // Test: Play -> Pause
-TEST_F(PlaybackManagerTest, Transition_PlayToPause) {
+TEST_F(PlaybackManagerTest, TransitionPlayToPause) {
     // Setup: Đưa về trạng thái Play
     playbackManager->play();
 
     // Hành động: Gọi Pause
     ErrorCode result = playbackManager->pause();
 
-    // Kiểm tra: Phải thành công
+    // Kiểm tra:
     EXPECT_EQ(result, ErrorCode::SUCCESS);
 
     // Kiểm tra trạng thái mới (PauseState):
@@ -77,14 +70,14 @@ TEST_F(PlaybackManagerTest, Transition_PlayToPause) {
 }
 
 // Test: Play -> Stop
-TEST_F(PlaybackManagerTest, Transition_PlayToStop) {
+TEST_F(PlaybackManagerTest, TransitionPlayToStop) {
     // Setup: Đưa về trạng thái Play
     playbackManager->play();
 
     // Hành động: Gọi Stop
     ErrorCode result = playbackManager->stop();
 
-    // Kiểm tra: Phải thành công
+    // Kiểm tra:
     EXPECT_EQ(result, ErrorCode::SUCCESS);
 
     // Kiểm tra trạng thái mới (IdleState):
@@ -95,7 +88,7 @@ TEST_F(PlaybackManagerTest, Transition_PlayToStop) {
 }
 
 // Test: Pause -> Stop
-TEST_F(PlaybackManagerTest, Transition_PauseToStop) {
+TEST_F(PlaybackManagerTest, TransitionPauseToStop) {
     // Setup: Idle -> Play -> Pause
     playbackManager->play();
     playbackManager->pause();
@@ -103,7 +96,7 @@ TEST_F(PlaybackManagerTest, Transition_PauseToStop) {
     // Hành động: Gọi Stop
     ErrorCode result = playbackManager->stop();
 
-    // Kiểm tra: Phải thành công (Về Idle)
+    // Kiểm tra:
     EXPECT_EQ(result, ErrorCode::SUCCESS);
     
     // Kiểm tra đã về Idle chưa
@@ -111,7 +104,7 @@ TEST_F(PlaybackManagerTest, Transition_PauseToStop) {
 }
 
 // Test: Pause -> Play (Resume)
-TEST_F(PlaybackManagerTest, Transition_PauseToPlay_Resume) {
+TEST_F(PlaybackManagerTest, TransitionPauseToPlayResume) {
     // Setup: Idle -> Play -> Pause
     playbackManager->play();
     playbackManager->pause();
@@ -125,11 +118,10 @@ TEST_F(PlaybackManagerTest, Transition_PauseToPlay_Resume) {
     EXPECT_EQ(playbackManager->play(), ErrorCode::INVALID_OPERATION);
 }
 
-// ==========================================
-// TEST GROUP 3: CHỨC NĂNG CHƯA CÀI ĐẶT
-// ==========================================
 
-TEST_F(PlaybackManagerTest, NextAndPrevious_ShouldReturnNotFound) {
+// TEST 3: CHỨC NĂNG CHƯA CÀI ĐẶT
+    
+TEST_F(PlaybackManagerTest, UnimplementedFunctions) {
     // Theo code playback_manager.cpp, 2 hàm này chưa implement
     EXPECT_EQ(playbackManager->nextTrack(), ErrorCode::NOT_FOUND);
     EXPECT_EQ(playbackManager->previousTrack(), ErrorCode::NOT_FOUND);

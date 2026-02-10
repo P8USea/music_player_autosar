@@ -1,10 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
-project(AutomotiveMusicPlayer)
-
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-# 1. SETUP GOOGLETEST
+# SETUP GOOGLETEST
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -35,11 +29,9 @@ add_library(music_player_lib STATIC ${SOURCE_FILES})
 target_include_directories(music_player_lib PUBLIC ${HEADER_DIRS})
 
 # 4. Tìm file Test
-# Vì file CMake đang ở trong folder 'test', nên chỉ cần tìm file cpp hiện tại
 file(GLOB_RECURSE TEST_FILES "*.cpp")
 
 # 5. Build Executable
-enable_testing()
 add_executable(unit_tests ${TEST_FILES})
 
 target_link_libraries(unit_tests PRIVATE 
