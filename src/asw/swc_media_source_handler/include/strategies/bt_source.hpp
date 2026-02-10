@@ -10,9 +10,7 @@ class BtSourceStrategy : public MediaSourceStrategy
 {
    public:
     Common::ErrorCode loadMediaSource(const Common::MediaSourceType& source) override;
-
     /// Trả về danh sách bài hát tìm thấy
-
     std::vector<std::unique_ptr<Song>> getSongs() const override;
 };
 }  // namespace Asw
