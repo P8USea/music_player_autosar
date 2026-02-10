@@ -14,8 +14,8 @@ class MediaSourceStrategy
 {
    public:
     virtual ~MediaSourceStrategy() = default;
-    virtual Common::ErrorCode loadMedia(const std::string& source) = 0;
-    virtual std::vector<std::unique_ptr<Song>> getSongs() const = 0;
+    virtual Common::ErrorCode loadMediaSource(const std::string& source);
+    virtual std::vector<std::unique_ptr<Song>> getSongs() const;
 };
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer

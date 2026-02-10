@@ -1,3 +1,6 @@
+#ifndef BT_SOURCE_HPP
+#define BT_SOURCE_HPP
+
 #include "media_source_strategy.hpp"
 namespace AutosarMusicPlayer {
 namespace Asw {
@@ -5,9 +8,15 @@ namespace Asw {
 class BtSourceStrategy : public MediaSourceStrategy
 {
    public:
-    Common::ErrorCode loadMedia(const std::string& source) override;
+    Common::ErrorCode loadMediaSource(const std::string& source) override;
+
+    /// Trả về danh sách bài hát tìm thấy
+
     std::vector<std::unique_ptr<Song>> getSongs() const override;
-    
+
+
 };
 }  // namespace Asw
 }  // namespace AutosarMusicPlayer
+
+#endif  // BT_SOURCE_HPP
