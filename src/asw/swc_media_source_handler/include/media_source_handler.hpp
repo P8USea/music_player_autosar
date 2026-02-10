@@ -13,7 +13,7 @@ class MediaSourceHandler
 {
    public:
     MediaSourceHandler() = default;
-    Common::ErrorCode loadMedia(std::vector<std::unique_ptr<Song>>& playlist);
+    Common::ErrorCode loadMediaItems(std::vector<std::unique_ptr<Song>>& playlist);
     std::vector<std::unique_ptr<Song>> getSongs() const;
     void setStrategy(std::unique_ptr<MediaSourceStrategy> strategy);
 

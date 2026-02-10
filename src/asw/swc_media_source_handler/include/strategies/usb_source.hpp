@@ -1,5 +1,6 @@
 #ifndef USB_SOURCE_HPP
 #define USB_SOURCE_HPP
+#include "app_types.hpp"
 #include "media_source_strategy.hpp"
 namespace AutosarMusicPlayer {
 namespace Asw {
@@ -7,7 +8,7 @@ namespace Asw {
 class UsbSourceStrategy : public MediaSourceStrategy
 {
    public:
-    Common::ErrorCode loadMedia(const std::string& source) override;
+    Common::ErrorCode loadMediaSource(const Common::MediaSourceType& source) override;
     std::vector<std::unique_ptr<Song>> getSongs() const override;
 };
 }  // namespace Asw

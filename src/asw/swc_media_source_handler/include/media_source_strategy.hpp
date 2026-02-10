@@ -2,10 +2,10 @@
 #define MEDIA_SOURCE_STRATEGY_HPP
 
 #include <memory>
-#include <string>
 #include <vector>
 
 #include "app_error_codes.hpp"
+#include "app_types.hpp"
 #include "song.hpp"
 namespace AutosarMusicPlayer {
 namespace Asw {
@@ -14,7 +14,7 @@ class MediaSourceStrategy
 {
    public:
     virtual ~MediaSourceStrategy() = default;
-    virtual Common::ErrorCode loadMedia(const std::string& source) = 0;
+    virtual Common::ErrorCode loadMediaSource(const Common::MediaSourceType& source) = 0;
     virtual std::vector<std::unique_ptr<Song>> getSongs() const = 0;
 };
 }  // namespace Asw
