@@ -32,7 +32,6 @@ file(GLOB_RECURSE SOURCES
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-#adding test subdirectory
 enable_testing()
 add_subdirectory(test)
 
